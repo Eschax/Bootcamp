@@ -1,0 +1,12 @@
+model\ResponseObject$DataItem.class
+model\ResponseObject.class
+restassured\TugasREST.class
+testng.class
+testng\PararelTestNG.class
+model\ResponseItem.class
+restassured\ValidationTest.class
+example\StaticProvider.class
+restassured\TugasValidationREST$1.class
+testng\PararelTestNG2.class
+restassured\TugasValidationREST.class
+restassured\RestAssuredlmpl.class
