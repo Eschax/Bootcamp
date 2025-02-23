@@ -24,9 +24,13 @@ public class TugasValidationREST {
                                                     .given();
 
         Response response = requestSpecification
-                .pathParam("path", "objects")
-                .when()
-                .get("{path}");
+                                .log()
+                                .all()
+                                .pathParam("path", "objects")
+                            .when()
+                                .get("{path}");
+
+        System.out.println("Response: " + response.asPrettyString());
 
         List<ResponseObject> products = response.jsonPath().getList("", ResponseObject.class);
 
