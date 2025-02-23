@@ -9,9 +9,9 @@ public class TugasREST {
 
     public static void main(String[] args) {
         // listAllObjects();
-        listObjectsId();
+        // listObjectsId();
         // singleObject();
-        // addObject();
+        addObject();
         // updateObject();
         // partiallyUpdateObject();
         // deleteObject();

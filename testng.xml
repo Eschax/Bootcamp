@@ -5,6 +5,7 @@
         <classes>
             <class name="testng.PararelTestNG"/>
             <class name="testng.PararelTestNG2"/>
+            <class name="restassured.TugasValidationREST">
         </classes>
     </test>
 </suite>

@@ -1,119 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-19T21:35:01 ICT" name="Annotation Execution Suite" finished-at="2025-02-19T21:35:01 ICT" duration-ms="62">
+  <suite started-at="2025-02-23T13:17:22 ICT" name="Surefire suite" finished-at="2025-02-23T13:17:26 ICT" duration-ms="3885">
     <groups>
     </groups>
-    <test started-at="2025-02-19T21:35:01 ICT" name="MyTestGroup" finished-at="2025-02-19T21:35:01 ICT" duration-ms="62">
-      <class name="testng.PararelTestNG2">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="setUpClass" finished-at="2025-02-19T21:35:01 ICT" duration-ms="10" status="PASS">
+    <test started-at="2025-02-23T13:17:22 ICT" name="Surefire test" finished-at="2025-02-23T13:17:26 ICT" duration-ms="3885">
+      <class name="restassured.TugasValidationREST">
+        <test-method is-config="true" signature="addObject()[pri:0, instance:restassured.TugasValidationREST@20d3d15a]" started-at="2025-02-23T13:17:22 ICT" name="addObject" finished-at="2025-02-23T13:17:26 ICT" duration-ms="3447" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="checkoutBarang()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="checkoutBarang" finished-at="2025-02-19T21:35:01 ICT" duration-ms="1" status="PASS">
+        </test-method> <!-- addObject -->
+        <test-method signature="updateObject()[pri:0, instance:restassured.TugasValidationREST@20d3d15a]" started-at="2025-02-23T13:17:26 ICT" name="updateObject" finished-at="2025-02-23T13:17:26 ICT" duration-ms="395" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkoutBarang -->
-        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-19T21:35:01 ICT" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Rudy]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataTestScenario -->
-        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Sari]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[20]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataTestScenario -->
-        <test-method signature="scenariotest1()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest1" finished-at="2025-02-19T21:35:01 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest1 -->
-        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Budi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[25]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataTestScenario -->
-        <test-method signature="scenariotest2()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest2" finished-at="2025-02-19T21:35:01 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest2 -->
-        <test-method signature="scenariotest3()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest3" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest3 -->
-        <test-method signature="scenariotest4()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest4" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest4 -->
-        <test-method signature="scenariotest5()[pri:0, instance:testng.PararelTestNG2@36c88a32]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest5" finished-at="2025-02-19T21:35:01 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest5 -->
-      </class> <!-- testng.PararelTestNG2 -->
-      <class name="testng.PararelTestNG">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="setUpClass" finished-at="2025-02-19T21:35:01 ICT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="checkoutBarang()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="checkoutBarang" finished-at="2025-02-19T21:35:01 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkoutBarang -->
-        <test-method signature="scenariotest1()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest1" finished-at="2025-02-19T21:35:01 ICT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest1 -->
-        <test-method signature="scenariotest3()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest3" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest3 -->
-        <test-method signature="scenariotest2()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest2" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest2 -->
-        <test-method signature="scenariotest4()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest4" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest4 -->
-        <test-method signature="scenariotest5()[pri:0, instance:testng.PararelTestNG@3aefe5e5]" started-at="2025-02-19T21:35:01 ICT" name="scenariotest5" finished-at="2025-02-19T21:35:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenariotest5 -->
-      </class> <!-- testng.PararelTestNG -->
-    </test> <!-- MyTestGroup -->
-  </suite> <!-- Annotation Execution Suite -->
+        </test-method> <!-- updateObject -->
+      </class> <!-- restassured.TugasValidationREST -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
 </testng-results>

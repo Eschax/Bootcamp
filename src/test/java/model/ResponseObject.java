@@ -2,7 +2,9 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseObject {
     @JsonProperty("id")
     public String id;
@@ -10,11 +12,17 @@ public class ResponseObject {
     @JsonProperty("name")
     public String name;
 
-    @JsonProperty("data")
-    public ProductData data;
-}
+    @JsonProperty("createdAt")
+    public String createdAt;
 
-class ProductData {
+    @JsonProperty("data")
+    public Data data;
+
+
+public static class Data {
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
     @JsonProperty("color")
     @JsonAlias("Color")
     public String color;
@@ -35,9 +43,11 @@ class ProductData {
     public Integer year;
 
     @JsonProperty("CPU model")
+    @JsonAlias("cpuModel")
     public String cpuModel;
 
     @JsonProperty("Hard disk size")
+    @JsonAlias("hardDiskSize")
     public String hardDiskSize;
 
     @JsonProperty("Strap Colour")
@@ -60,4 +70,6 @@ class ProductData {
 
     @JsonProperty("Capacity")
     public String capacityCapitalized;
+}
+
 }
