@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="8.052" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-02-23T10:26:00.874454900Z">
-<testcase classname="End to End Test for Products" name="As a user I can add new data - #1.1" time="5.108">
+<testsuite name="Cucumber" time="9.095" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-02-25T12:27:58.211802700Z">
+<testcase classname="End to End Test for Products" name="As a user I can add new data" time="2.611">
+<failure/>
 <system-out><![CDATA[
 Given A list of item are available..........................................passed
-When I add item to list.....................................................passed
-Then The item is available..................................................passed
+When I add item to list.....................................................undefined
+Then The item is available..................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="End to End Test for Products" name="As a user I can add new data - #1.2" time="2.689">
+<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.1" time="3.486">
 <system-out><![CDATA[
 Given A list of item are available..........................................passed
-When I add item to list.....................................................passed
-Then The item is available..................................................passed
+When I add item to list "addItem"...........................................passed
+Then The item is available "addItem"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.2" time="2.805">
+<system-out><![CDATA[
+Given A list of item are available..........................................passed
+When I add item to list "addItem2"..........................................passed
+Then The item is available "addItem2".......................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

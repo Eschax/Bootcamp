@@ -1,11 +1,10 @@
-package model;
+package com.tugasqa.model.request;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseObject {
+public class RequestItem {
+
     @JsonProperty("id")
     public String id;
 
@@ -21,7 +20,6 @@ public class ResponseObject {
 
 public static class Data {
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 
     @JsonProperty("color")
     @JsonAlias("Color")
@@ -73,3 +71,4 @@ public static class Data {
 }
 
 }
+

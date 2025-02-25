@@ -1,1 +1,6 @@
+com\tugasqa\model\ResponseItem.class
+com\tugasqa\model\ResponseObject.class
+com\tugasqa\model\ResponseObject$Data.class
 com\tugasqa\Main.class
+com\tugasqa\model\request\RequestItem$Data.class
+com\tugasqa\model\request\RequestItem.class

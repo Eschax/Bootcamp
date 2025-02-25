@@ -1,5 +1,5 @@
-# Created at 2025-02-23T13:15:46.951
-org.testng.TestNGException: org.xml.sax.SAXParseException; lineNumber: 13; columnNumber: 16; The end-tag for element type "class" must end with a '>' delimiter.
+# Created at 2025-02-25T19:18:10.766
+org.testng.TestNGException: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 16; The end-tag for element type "class" must end with a '>' delimiter.
 	at org.testng.TestNG.parseSuite(TestNG.java:342)
 	at org.testng.TestNG.initializeSuitesAndJarFile(TestNG.java:394)
 	at org.testng.TestNG.initializeEverything(TestNG.java:1059)
@@ -11,7 +11,7 @@ org.testng.TestNGException: org.xml.sax.SAXParseException; lineNumber: 13; colum
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: org.xml.sax.SAXParseException; lineNumber: 13; columnNumber: 16; The end-tag for element type "class" must end with a '>' delimiter.
+Caused by: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 16; The end-tag for element type "class" must end with a '>' delimiter.
 	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
 	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
 	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)

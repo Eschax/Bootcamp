@@ -1,4 +1,4 @@
-package model;
+package com.tugasqa.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

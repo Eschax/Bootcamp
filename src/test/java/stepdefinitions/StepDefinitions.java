@@ -1,7 +1,9 @@
 package stepdefinitions;
 
-import org.testng.Assert;
 
+import java.util.Map;
+import org.testng.Assert;
+import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,15 +11,29 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import model.ResponseObject;
+import resources.DataRequest;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tugasqa.model.ResponseObject;
+import com.tugasqa.model.request.RequestItem;
+
 
 public class StepDefinitions {
 
-    private static String objectId;
+    String objectId;
+    ResponseObject ResponseObject;
+    RequestItem requestItem;
+    DataRequest DataRequest; 
+    String json;
+    String idProduct;
+
+    // Inisialisasi DataRequest di constructor
+    public StepDefinitions() {
+        this.DataRequest = new DataRequest(); 
+    }
 
     @Given("A list of item are available")
     public void AllProducts() {
-
         System.out.println("List produk");
         RestAssured.baseURI = "https://api.restful-api.dev";
 
@@ -34,73 +50,81 @@ public class StepDefinitions {
         System.out.println("Response: " + response.asPrettyString());
     }
 
-    @When("I add item to list")
-    public void itemisAdded() {
-        System.out.println("Menambahkan produk");
-        String json = "{\r\n" + 
-        "   \"name\": \"Samsung S25 Ultra\",\r\n" + 
-        "   \"data\": {\r\n" + 
-        "      \"year\": 2025,\r\n" + 
-        "      \"price\": 2000,\r\n" + 
-        "      \"cpuModel\": \"Snapdragon 8 Elite\",\r\n" + 
-        "      \"hardDiskSize\": \"1 TB\"\r\n" + 
-        "   }\r\n" + 
-        "}";
+    @When("I add item to list {string}")
+    public void addItem(String payload) throws JsonProcessingException, com.fasterxml.jackson.core.JsonProcessingException {
+    
+    RestAssured.baseURI = "https://api.restful-api.dev";
+    RequestSpecification requestSpecification = RestAssured
+                                                .given();
 
-RestAssured.baseURI = "https://api.restful-api.dev";
+        for(Map.Entry<String, String> entry : DataRequest.addItemColletion().entrySet()){
+            if (entry.getKey().equals(payload)) {
+                json = entry.getValue();
+                break;
+            }
+        }
+        Response response = requestSpecification
+        .log()
+        .all()
+        .pathParam("path", "objects")
+        .body(json)
+        .contentType("application/json")
+    .when()
+        .post("{path}");
 
-RequestSpecification requestSpecification = RestAssured
-                                            .given();
+        ObjectMapper requestAddItem = new ObjectMapper();
+        requestItem = requestAddItem.readValue(json, RequestItem.class);
 
-            Response response2 = requestSpecification
-                    .log()
-                    .all()
-                    .pathParam("path", "objects")
-                    .body(json)
-                    .contentType("application/json")
-                .when()
-                    .post("{path}");
+    // Ambil ID dari respons
+    JsonPath addJsonPath = response.jsonPath();
+    objectId = addJsonPath.getString("id"); // Simpan ID untuk digunakan di Then
+    
+    // Validasi respons
+    ResponseObject = addJsonPath.getObject("", ResponseObject.class);
+    
+    // Assertion
+    Assert.assertEquals(response.getStatusCode(), 200, "Status code");
+    Assert.assertEquals(ResponseObject.name, requestItem.name);
+    Assert.assertEquals(ResponseObject.data.year, requestItem.data.year);
+    Assert.assertEquals(ResponseObject.data.price, requestItem.data.price);
+    Assert.assertEquals(ResponseObject.data.cpuModel, requestItem.data.cpuModel);
 
-                JsonPath jsonPath = response2.jsonPath();
+    idProduct = objectId; 
 
-                objectId = jsonPath.getString("id");
+    }
+    @Then("The item is available {string}")
+public void the_item_is_available(String payload) throws JsonProcessingException {
+    System.out.println("ini then");
 
-                ResponseObject responseObject = jsonPath.getObject("", ResponseObject.class);
-                            
-                Assert.assertEquals(responseObject.name, "Samsung S25 Ultra");
-                Assert.assertEquals(responseObject.data.year, 2025);
-                Assert.assertEquals(responseObject.data.price, 2000);
-                Assert.assertEquals(responseObject.data.cpuModel, "Snapdragon 8 Elite");
-                            
-                System.out.println("Response: " + response2.asPrettyString());
-                System.out.println("ID: " + objectId);
+    RestAssured.baseURI = "https://api.restful-api.dev";
+    RequestSpecification requestSpecification = RestAssured.given();
 
-                }     
+    String json = "";
+    for (Map.Entry<String, String> entry : DataRequest.addItemColletion().entrySet()) {
+        if (entry.getKey().equals(payload)) {
+            json = entry.getValue();
+            break;
+        }
+    }
 
-    @Then("The item is available")
-    public void itemIsAvailable() {
-        System.out.println("Produk tersedia");
-
-        RestAssured.baseURI = "https://api.restful-api.dev";
-
-        RequestSpecification requestSpecification = RestAssured
-                                                    .given();
-
-        Response response3 = requestSpecification
+    Response response = requestSpecification
                             .log()
                             .all()
                             .pathParam("path", "objects")
-                            .pathParam("idObject", objectId)
+                            .pathParam("idObject", idProduct)
+                            .body(json)
+                            .contentType("application/json")
                         .when()
-                            .get("{path}/{idObject}");
+                        .get("{path}/{idObject}");
 
-                            JsonPath jsonPath = response3.jsonPath();
-                            ResponseObject responseObject = jsonPath.getObject("", ResponseObject.class);
+    JsonPath jsonPath = response.jsonPath();
 
-                            Assert.assertEquals(responseObject.name, "Samsung S25 Ultra");
-                            Assert.assertEquals(responseObject.data.year, 2025);
-                            Assert.assertEquals(responseObject.data.price, 2000);
-                            Assert.assertEquals(responseObject.data.cpuModel, "Snapdragon 8 Elite");
-                    
-    }
+    ResponseObject responseObject = jsonPath.getObject("", ResponseObject.class);
+
+    Assert.assertEquals(responseObject.name, requestItem.name);
+    Assert.assertEquals(responseObject.data.year, requestItem.data.year);
+    Assert.assertEquals(responseObject.data.price, requestItem.data.price);
+    Assert.assertEquals(responseObject.data.cpuModel, requestItem.data.cpuModel);
+}
+
 }
