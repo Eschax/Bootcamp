@@ -112,10 +112,7 @@ public class StepDefinitions {
 
     // Validasi data
     Assert.assertEquals(response.getStatusCode(), 200, "Status code");
-    Assert.assertEquals(ResponseObject.name, requestItem.name);
-    Assert.assertEquals(ResponseObject.data.year, requestItem.data.year);
-    Assert.assertEquals(ResponseObject.data.price, requestItem.data.price);
-    Assert.assertEquals(ResponseObject.data.cpuModel, requestItem.data.cpuModel);
+    assertion.assertAddProduct(ResponseObject, requestItem);
 }
 
     @Then("The item is available")
@@ -128,10 +125,7 @@ public class StepDefinitions {
     JsonPath jsonPath = response.jsonPath();
     ResponseObject responseObject = jsonPath.getObject("", ResponseObject.class);
 
-    Assert.assertEquals(responseObject.name, requestItem.name);
-    Assert.assertEquals(responseObject.data.year, requestItem.data.year);
-    Assert.assertEquals(responseObject.data.price, requestItem.data.price);
-    Assert.assertEquals(responseObject.data.cpuModel, requestItem.data.cpuModel);
+        //RE-Factor
+    assertion.the_item_is_available(ResponseObject, requestItem);
     }
-
 }

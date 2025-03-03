@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="6.023" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-03-01T08:24:27.971104600Z">
-<testcase classname="End to End Test for Products" name="As a user I can add new data" time="3.234">
+<testsuite name="Cucumber" time="7.176" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-03-03T14:59:14.570021700Z">
+<testcase classname="End to End Test for Products" name="As a user I can add new data" time="3.746">
 <system-out><![CDATA[
 Given A list of item are available..........................................passed
 When I add item to list.....................................................passed
 Then The item is available..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.1" time="1.194">
+<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.1" time="1.82">
 <system-out><![CDATA[
 Given A list of item are available..........................................passed
 When I add item to list "addItem"...........................................passed
 Then The item is available..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.2" time="1.159">
+<testcase classname="End to End Test for Products" name="As a user I can add new data with different payload - #1.2" time="1.445">
 <system-out><![CDATA[
 Given A list of item are available..........................................passed
 When I add item to list "addItem2"..........................................passed
